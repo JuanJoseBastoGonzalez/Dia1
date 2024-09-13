@@ -1,0 +1,128 @@
+.contenedor {
+    height: auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1000px; /* Agrega perspectiva para el efecto 3D */
+  }
+  
+  .tarjeta {
+    height: 300px;
+    width: 240px;
+    background-color: #000000;
+    border-radius: 10%;
+    box-shadow: 16px 14px 20px #0000008c;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d; /* Mantiene el efecto 3D durante la rotación */
+    transition: transform 0.6s; /* Duración de la animación */
+  }
+  
+  .tarjeta:hover{
+    transform: rotateY(360deg); 
+    /* Rota la tarjeta 180 grados en el eje Y */
+background-color: white; 
+ 
+}
+  
+  .foto1 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
+    backface-visibility: hidden; /* Oculta la parte trasera durante la rotación */
+  }
+  
+  .texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para el texto */
+    opacity: 0;
+    transition: opacity 0.6s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden; /* Oculta el texto en la parte trasera */
+  }
+  
+  .tarjeta:hover .texto {
+    opacity: 1; /* Muestra el texto cuando se hace hover */
+    background-color: white;
+  }
+  
+  /* Anterior código que no está en uso actualmente:
+  .tarjeta::before {
+    content: "";
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    background-image: conic-gradient(rgb(0, 0, 0) 200deg, transparent 210deg);
+    animation: rotar 2s linear infinite;
+  }
+  
+  .tarjeta::after {
+    content: "";
+    position: absolute;
+    height: 240px;
+    width: 190px;
+    background-color: #00000000;
+    border-radius: 10%;
+    box-shadow: inset 16px 14px 20px #0000008c;
+  }
+  */
+  
+  h2 {
+    color: rgb(0, 0, 0);
+    z-index: 2;
+    background-color: transparent;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    text-shadow: 5px 5px 5px black;
+    
+  }
+  
+  .tergetas {
+    display: grid;
+    grid-template-columns: 50% 50%;
+   
+  }
+  
+
+
+/* Consultas de medios para dispositivos móviles */
+@media (max-width: 768px) {
+    .tarjeta {
+        height: 250px;
+        width: 200px;
+    }
+
+    .texto {
+        font-size: 18px; /* Ajusta el tamaño del texto en pantallas medianas */
+    }
+}
+
+@media (max-width: 480px) {
+    .tarjeta {
+        height: 200px;
+        width: 150px;
+    }
+
+    .texto {
+        font-size: 16px; /* Ajusta el tamaño del texto en pantallas pequeñas */
+    }
+
+    .tergetas {
+        grid-template-columns: 1fr; /* Cambia a una columna en pantallas pequeñas */
+        gap: 1rem; /* Reduce el espacio entre las tarjetas */
+    }
+}

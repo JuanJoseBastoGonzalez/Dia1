@@ -1,0 +1,43 @@
+.container{
+    height: 92vh;
+    color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.foto1{
+    height: 600px;
+    width: auto;
+
+}
+
+/* Consultas de medios para dispositivos móviles */
+@media (max-width: 768px) {
+    .container {
+        height: auto; /* Ajusta la altura para que se adapte al contenido */
+        flex-direction: column; /* Coloca las imágenes una debajo de la otra en pantallas medianas */
+        gap: 0.5rem; /* Reduce el espacio entre las imágenes */
+    }
+
+    .foto1 {
+        height: 400px; /* Ajusta la altura de la imagen para pantallas medianas */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        height: auto; /* Ajusta la altura para que se adapte al contenido */
+        padding: 1rem; /* Añade espacio alrededor del contenido */
+        flex-direction: column; /* Asegura que las imágenes estén una debajo de la otra */
+        gap: 0.5rem; /* Espacio reducido entre las imágenes */
+    }
+
+    .foto1 {
+        height: 300px; /* Ajusta la altura de la imagen para pantallas pequeñas */
+    }
+}

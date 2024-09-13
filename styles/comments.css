@@ -1,0 +1,21 @@
+.comments {
+    border-top: 2px solid white; /* Ajusta el grosor y el color de la línea según sea necesario */
+    padding-top: 100px; /* Espacio opcional entre la línea y el contenido */
+    color:white;
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+    width: 100%;
+    gap:2rem;
+    font-size: 1rem;
+ 
+  }
+ .comentarios{
+    border: 2px solid silver; /* Ajusta el grosor y color del borde */
+    padding: 10px; /* Espacio opcional entre el borde y el contenido */
+    width: 20rem;
+
+  }
+  .user{
+    width: 2rem;
+  }
